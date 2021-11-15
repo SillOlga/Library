@@ -34,30 +34,50 @@ public class LibHistory {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Book getBook() {
         return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
     }
 
     public Reader getReader() {
         return reader;
     }
 
+    public void setReader(Reader reader) {
+        this.reader = reader;
+    }
+
     public Date getBookIssued() {
         return bookIssued;
+    }
+
+    public void setBookIssued(Date bookIssued) {
+        this.bookIssued = bookIssued;
     }
 
     public Date getBookReturn() {
         return bookReturn;
     }
 
+    public void setBookReturn(Date bookReturn) {
+        this.bookReturn = bookReturn;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 61 * hash + Objects.hashCode(this.id);
-        hash = 61 * hash + Objects.hashCode(this.book);
-        hash = 61 * hash + Objects.hashCode(this.reader);
-        hash = 61 * hash + Objects.hashCode(this.bookIssued);
-        hash = 61 * hash + Objects.hashCode(this.bookReturn);
+        int hash = 7;
+        hash = 73 * hash + Objects.hashCode(this.id);
+        hash = 73 * hash + Objects.hashCode(this.book);
+        hash = 73 * hash + Objects.hashCode(this.reader);
+        hash = 73 * hash + Objects.hashCode(this.bookIssued);
+        hash = 73 * hash + Objects.hashCode(this.bookReturn);
         return hash;
     }
 
@@ -95,7 +115,10 @@ public class LibHistory {
     public String toString() {
         return "LibHistory{" + "id=" + id + ", book=" + book + ", reader=" + reader + ", bookIssued=" + bookIssued + ", bookReturn=" + bookReturn + '}';
     }
-}
+
+    
+    }
+
 
    
 

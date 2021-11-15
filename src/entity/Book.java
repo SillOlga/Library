@@ -94,5 +94,25 @@ public class Book {
     public String toString() {
         return "Book{" + "id=" + id + ", bookName=" + bookName + ", isbn=" + isbn + ", author=" + author + ", yearPublishing=" + yearPublishing + '}';
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setYearPublishing(Integer yearPublishing) {
+        this.yearPublishing = yearPublishing;
+    }
     
 }

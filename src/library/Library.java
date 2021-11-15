@@ -33,9 +33,13 @@ public class Library {
         System.out.println(book1.toString());
         System.out.println(reader1.toString());
         System.out.println(libHistory1.toString());
+        
+        c.add(Calendar.DATE,2);
+        libHistory1.setBookReturn(c.getTime());
+        System.out.println(libHistory1.toString());
     }
     
- }   
+}
     
     
     
