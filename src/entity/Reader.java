@@ -33,30 +33,50 @@ public class Reader {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getSurname() {
         return surname;
     }
 
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     public String getPhone() {
         return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getCity() {
         return city;
     }
 
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + Objects.hashCode(this.id);
-        hash = 29 * hash + Objects.hashCode(this.name);
-        hash = 29 * hash + Objects.hashCode(this.surname);
-        hash = 29 * hash + Objects.hashCode(this.phone);
-        hash = 29 * hash + Objects.hashCode(this.city);
+        int hash = 3;
+        hash = 61 * hash + Objects.hashCode(this.id);
+        hash = 61 * hash + Objects.hashCode(this.name);
+        hash = 61 * hash + Objects.hashCode(this.surname);
+        hash = 61 * hash + Objects.hashCode(this.phone);
+        hash = 61 * hash + Objects.hashCode(this.city);
         return hash;
     }
 
@@ -94,7 +114,6 @@ public class Reader {
     public String toString() {
         return "Reader{" + "id=" + id + ", name=" + name + ", surname=" + surname + ", phone=" + phone + ", city=" + city + '}';
     }
+
+ 
 }
-            
-   
-   
