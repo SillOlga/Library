@@ -8,6 +8,7 @@ package myclasses;
 import entity.Book;
 import entity.BookCreator;
 import entity.BookReturner;
+import entity.HistoryReturner;
 import entity.LibHistory;
 import entity.LibHistoryCreator;
 import entity.Reader;
@@ -51,6 +52,13 @@ public class App {
                     readers.add(readerCreator.returnNewReader());
                     break;
                 case 3:
+                    if (books.size() < 1) { // Проверяем, есть ли в списке книг хоть одна книга3
+                        
+                    System.out.println("---------------------");
+                    System.out.println("В библиотеке есть книги");
+                    System.out.println("---------------------");
+                    break;
+                    }
                     LibHistoryCreator libHistoryCreator = new LibHistoryCreator();
                     libHistories.add(libHistoryCreator.returnNewLibHistory(books, readers));
                     break;
@@ -61,6 +69,10 @@ public class App {
                     }else{
                         System.out.println("Книгу вернуть не удалось");    
                     }
+                    break;
+                case 5:
+                    HistoryReturner historyReturner = new HistoryReturner();
+                    historyReturner.printListWhoTookBooks(libHistories);
                     break;
                 default:
                     System.out.println("Выберите одно из действий");
