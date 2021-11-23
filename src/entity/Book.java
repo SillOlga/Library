@@ -11,6 +11,7 @@ import java.util.Objects;
  *
  * @author Vladimir
  */
+@Entity
 public class Book {
     private Long id;
     private String bookName;

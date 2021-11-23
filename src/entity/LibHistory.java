@@ -7,16 +7,30 @@ package entity;
 
 import java.util.Date;
 import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
  * @author Vladimir
  */
+@Entity
 public class LibHistory {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @OneToOne
     private Book book;
+    @OneToOne
     private Reader reader;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date bookIssued;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date bookReturn;
     
     public LibHistory() {
