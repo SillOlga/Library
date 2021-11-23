@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entity;
+package creator;
 
+import entity.Book;
+import entity.LibHistory;
+import entity.Reader;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -31,10 +34,25 @@ public class LibHistoryCreator {
         }
         System.out.println("Выберите номер книги:");
         int numberBook = scanner.nextInt();
+        if (books.size() < numberBook) { // Если список книг недостаточно большой
+        System.out.println("Книги под таким номером в библиотеке нет");
+        return new LibHistory();
+        }
         Book book = books.get(numberBook-1);
+        
         System.out.println("Выберите номер читателя:");
         int numberReader = scanner.nextInt();
+        int numberReaders = 0;
+        if (readers.size() < numberReaders) { // Если список читателей недостаточно большой
+        System.out.println("Читателя под таким номером в библиотеке нет");
+        return new LibHistory();
+        }
         Reader reader = readers.get(numberReader-1);
+        
+        
+        
+        
+        
         Calendar c = new GregorianCalendar();
         LibHistory libHistory = new LibHistory(null, book, reader, c.getTime(), null);
         return libHistory;
