@@ -130,6 +130,10 @@ public class LibHistory {
         return "LibHistory{" + "id=" + id + ", book=" + book + ", reader=" + reader + ", bookIssued=" + bookIssued + ", bookReturn=" + bookReturn + '}';
     }
 
+    public void add(LibHistory libHistory) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     }
 

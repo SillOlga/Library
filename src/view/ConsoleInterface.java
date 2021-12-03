@@ -16,6 +16,8 @@ import java.util.List;
 import returner.BookReturner;
 import returner.HistoryReturner;
 
+
+
 /**
  *
  * @author Vladimir
@@ -25,13 +27,15 @@ public class ConsoleInterface implements Manageable{
     @Override
     public Book createBook() {
         BookCreator bookCreator = new BookCreator();
-        return bookCreator.returnNewBook();       
+        return bookCreator.returnNewBook();
+        
     }
 
     @Override
     public Reader createReader() {
         ReaderCreator readerCreator = new ReaderCreator();
         return readerCreator.returnNewReader();
+        
     }
 
     @Override
@@ -41,21 +45,18 @@ public class ConsoleInterface implements Manageable{
     }
 
     @Override
-    public boolean returnBook(List<LibHistory> libHistories) {
+    public LibHistory returnBook(List<LibHistory> libHistories) {
         BookReturner bookReturner = new BookReturner();
-        return bookReturner.returnLibHistory(libHistories);    
+        return bookReturner.returnLibHistory(libHistories);
+        
     }
 
-    /**
-     *
-     * @param libHistories
-     */
     @Override
     public void returnHistory(List<LibHistory> libHistories) {
         HistoryReturner historyReturner = new HistoryReturner();
         historyReturner.printListWhoTookBooks(libHistories);
     }
 
-    
-        
 }
+
+    
