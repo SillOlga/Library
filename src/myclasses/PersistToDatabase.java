@@ -22,19 +22,20 @@ import javax.persistence.Persistence;
  * @author Vladimir
  */
 public class PersistToDatabase implements Retentive{
-
     private final EntityManager em;
     private final EntityTransaction tx;
-
+    
     public PersistToDatabase() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("LibraryPU");
         em = emf.createEntityManager();
         tx = em.getTransaction();
        //emf.close();
     }
+
     @Override
     public void freeResources() {
         if(em != null) em.close();
+
     }
 
     @Override
@@ -43,14 +44,12 @@ public class PersistToDatabase implements Retentive{
         em.persist(book);
         tx.commit();
     }
-
     @Override
     public void saveReader(Reader reader) {
         tx.begin();
         em.persist(reader);
         tx.commit();
     }
-
     @Override
     public void saveLibHistory(LibHistory libHistory, boolean update) {
         tx.begin();
@@ -61,7 +60,6 @@ public class PersistToDatabase implements Retentive{
         }
         tx.commit();
     }
-
     @Override
     public List<Book> loadBooks() {
         try {
@@ -70,7 +68,6 @@ public class PersistToDatabase implements Retentive{
             return new ArrayList<Book>();
         }
     }
-
     @Override
     public List<Reader> loadReaders() {
         try {
@@ -79,7 +76,6 @@ public class PersistToDatabase implements Retentive{
             return new ArrayList<Reader>();
         }
     }
-
     @Override
     public List<LibHistory> loadLibHistoryes() {
         try {
@@ -94,4 +90,5 @@ public class PersistToDatabase implements Retentive{
         
     }
 
+    
 }

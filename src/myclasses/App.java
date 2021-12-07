@@ -23,7 +23,7 @@ public class App {
    private List<Reader> readers;
    private List<LibHistory> libHistories;
    private Manageable manager = new ConsoleInterface();
-   private Retentive saver = (PersistToDatabase) new PersistToDatabase();
+   private Retentive saver = new PersistToDatabase();
    
    public App() {
        this.books = saver.loadBooks();
@@ -53,18 +53,24 @@ public class App {
                     break;
                 case 1:
                     Book book = manager.createBook();
-                    books.add(book);
-                    saver.saveBook(book);
+                    if(book != null){
+                        books.add(book);
+                        saver.saveBook(book);
+                    }
                     break;
                 case 2:
                     Reader reader = manager.createReader();
-                    readers.add(reader);
-                    saver.saveReader(reader);
+                    if(reader != null){
+                        readers.add(reader);
+                        saver.saveReader(reader); 
+                    }
                     break;
                 case 3://выдать книгу читателю
                     LibHistory libHistory = manager.issueBook(books, readers);
-                    libHistories.add(libHistory);
-                    saver.saveLibHistory(libHistory, false);
+                    if(libHistory != null){
+                        libHistories.add(libHistory);
+                        saver.saveLibHistory(libHistory, false); 
+                    }
                     break;
                 case 4:
                     LibHistory lh = manager.returnBook(libHistories);

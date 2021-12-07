@@ -33,26 +33,15 @@ public class LibHistoryCreator {
             
         }
         System.out.println("Выберите номер книги:");
+        System.out.println("(0 для выхода)");
         int numberBook = scanner.nextInt();
-        if (books.size() < numberBook) { // Если список книг недостаточно большой
-        System.out.println("Книги под таким номером в библиотеке нет");
-        return new LibHistory();
-        }
+        if(numberBook < 1) return null;
         Book book = books.get(numberBook-1);
-        
         System.out.println("Выберите номер читателя:");
+        System.out.println("(-1 для выхода)");
         int numberReader = scanner.nextInt();
-        int numberReaders = 0;
-        if (readers.size() < numberReaders) { // Если список читателей недостаточно большой
-        System.out.println("Читателя под таким номером в библиотеке нет");
-        return new LibHistory();
-        }
+        if(numberBook < 0) return null;
         Reader reader = readers.get(numberReader-1);
-        
-        
-        
-        
-        
         Calendar c = new GregorianCalendar();
         LibHistory libHistory = new LibHistory(null, book, reader, c.getTime(), null);
         return libHistory;
